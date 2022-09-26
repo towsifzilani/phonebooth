@@ -17,10 +17,20 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role',['Admin','Member'])->default('Member');
+            $table->string('address',255)->default('');
+            $table->text('pro_img')->nullable();
+            $table->enum('status',['0','1'])->default('0');
+            $table->string('activation_code',100)->default('');
+            $table->string('loggedin_ip',100)->default('');
+            $table->integer('package_id')->default(0);
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('last_logged_at')->nullable();
+            $table->enum('deleted',['0','1'])->default('0');
         });
     }
 
