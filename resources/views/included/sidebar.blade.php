@@ -8,12 +8,12 @@
                 </a>
             </li>
 
-            <li><a href="./index.html"><i class="icon-people menu-icon"></i> <span class="nav-text">Usermanagement</span></a></li>
-            <li><a href="./index.html"><i class="icon-notebook menu-icon"></i> <span class="nav-text">Pakcage Management</span></a></li>
-            <li><a href="./index.html"><i class="icon-book-open menu-icon"></i> <span class="nav-text">Phonebook</span></a></li>
-            <li><a href="./index.html"><i class="icon-envelope menu-icon"></i> <span class="nav-text">Message Templates</span></a></li>
-            <li><a href="./layout-blank.html"><i class="icon-settings menu-icon"></i> <span class="nav-text">General Settings</span></a></li>
-            <li><a href="./layout-blank.html"><i class="icon-folder menu-icon"></i> <span class="nav-text">Phonebook Settings</span></a></li>
+            <li><a href="{{ route('users-lists') }}"><i class="icon-people menu-icon"></i> <span class="nav-text">{{ __("Usermanagement") }}</span></a></li>
+            <li><a href="#"><i class="icon-notebook menu-icon"></i> <span class="nav-text">{{ __("Package Management") }}</span></a></li>
+            <li><a href="#"><i class="icon-book-open menu-icon"></i> <span class="nav-text">{{ __("Phonebook") }}</span></a></li>
+            <li><a href="#"><i class="icon-envelope menu-icon"></i> <span class="nav-text">{{ __("Message Templates") }}</span></a></li>
+            <li><a href="#"><i class="icon-settings menu-icon"></i> <span class="nav-text">{{ __("General Settings") }}</span></a></li>
+            <li><a href="#"><i class="icon-folder menu-icon"></i> <span class="nav-text">{{ __("Phonebook Settings") }}</span></a></li>
 <!--             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="#" aria-expanded="false">
                     <i class="icon-grid menu-icon"></i> <span class="nav-text">Settings</span>

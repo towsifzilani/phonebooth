@@ -12,15 +12,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-        @php $load_datatable=false;@endphp
-        @if($load_datatable)
-            <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/datatables.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/DataTables-1.10.25/css/dataTables.bootstrap5.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/ColReorder-1.5.4/css/colReorder.bootstrap5.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/Buttons-1.7.1/css/buttons.bootstrap5.min.css') }}">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-        @endif
+
+        <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/datatables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/DataTables-1.10.25/css/dataTables.bootstrap5.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/ColReorder-1.5.4/css/colReorder.bootstrap5.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/datatables/Buttons-1.7.1/css/buttons.bootstrap5.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
         <link rel="stylesheet" href="{{ asset('assets/vendors/datetimepicker/jquery.datetimepicker.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
@@ -46,6 +44,12 @@
         <link rel="stylesheet" href="{{ asset('assets/theme/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css') }}">
         <!-- Custom Stylesheet -->
         <link href="{{ asset('assets/theme/css/style.css') }}" rel="stylesheet">
+
+        <script src="{{ asset('assets/theme/plugins/common/common.min.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/custom.min.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/settings.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/gleek.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/styleSwitcher.js') }}"></script>
         <!-- themes assets -->
 
         @stack('css-header')
@@ -142,23 +146,20 @@
         <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/feather-icons/feather.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/nicescroll/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('assets/js/main.js') }}"></script>
 
-        @if($load_datatable)
-            <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-            <script src="{{ asset('assets/vendors/datatables/datatables.min.js') }}"></script>
-            <script src="{{ asset('assets/vendors/datatables/DataTables-1.10.25/js/dataTables.bootstrap5.min.js') }}"></script>
-            <script src="{{ asset('assets/vendors/datatables/ColReorder-1.5.4/js/colReorder.bootstrap5.min.js') }}"></script>
-            <script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/dataTables.buttons.min.js') }}"></script>
-            <script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/buttons.bootstrap5.min.js') }}"></script>
-            {{--<script src="{{ asset('assets/vendors/datatables/JSZip-2.5.0/jszip.min.js') }}"></script>--}}
-            {{--<script src="{{ asset('assets/vendors/datatables/pdfmake-0.1.36/pdfmake.min.js') }}"></script>--}}
-            {{--<script src="{{ asset('assets/vendors/datatables/pdfmake-0.1.36/vfs_fonts.js') }}"></script>--}}
-            <script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/buttons.html5.min.js') }}"></script>
-            {{--<script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/buttons.print.min.js') }}"></script>--}}
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-        @endif
+        <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables/datatables.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables/DataTables-1.10.25/js/dataTables.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables/ColReorder-1.5.4/js/colReorder.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/buttons.bootstrap5.min.js') }}"></script>
+        {{--<script src="{{ asset('assets/vendors/datatables/JSZip-2.5.0/jszip.min.js') }}"></script>--}}
+        {{--<script src="{{ asset('assets/vendors/datatables/pdfmake-0.1.36/pdfmake.min.js') }}"></script>--}}
+        {{--<script src="{{ asset('assets/vendors/datatables/pdfmake-0.1.36/vfs_fonts.js') }}"></script>--}}
+        <script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/buttons.html5.min.js') }}"></script>
+        {{--<script src="{{ asset('assets/vendors/datatables/Buttons-1.7.1/js/buttons.print.min.js') }}"></script>--}}
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
         <script src="{{ asset('assets/vendors/datetimepicker/build/jquery.datetimepicker.full.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -172,11 +173,7 @@
         <!--**********************************
             Scripts
         ***********************************-->
-        <script src="{{ asset('assets/theme/plugins/common/common.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/custom.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/settings.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/gleek.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/styleSwitcher.js') }}"></script>
+
 
         <!-- Chartjs -->
         <script src="{{ asset('assets/theme/plugins/chart.js/Chart.bundle.min.js') }}"></script>

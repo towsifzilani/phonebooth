@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard',[Dashboard::class,'index'])->middleware(['auth'])->name('dashboard');
+Route::get('users/list',[Users::class,'index'])->middleware(['auth'])->name('users-lists');
 
 require __DIR__.'/auth.php';
