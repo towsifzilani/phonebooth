@@ -12,24 +12,36 @@
 	<div class='col-12'>
 		<div class="card">
 			<div class="card-body">
-				<table class="table table-bordered" id="table_id" class="display">
-				    <thead>
-				        <tr>
-				            <th>Column 1</th>
-				            <th>Column 2</th>
-				        </tr>
-				    </thead>
-				    <tbody>
-				        <tr>
-				            <td>Row 1 Data 1</td>
-				            <td>Row 1 Data 2</td>
-				        </tr>
-				        <tr>
-				            <td>Row 2 Data 1</td>
-				            <td>Row 2 Data 2</td>
-				        </tr>
+				<table class="table table-bordered table-striped" id="tbl-employees">
+				       <thead>
+				           <tr>
+				               <th>Name</th>
+				               <th>Position</th>
+				               <th>Office</th>
+				               <th>Salary</th>
+				           </tr>
+				       </thead>
+				       <tbody>
+				           <tr>
+				               <td>Ashish Kumar</td>
+				               <td>PHP</td>
+				               <td>Office ABC</td>
+				               <td>100000</td>
+				           </tr>
+				           <tr>
+				               <td>Vijay Kumar</td>
+				               <td>Wordpress</td>
+				               <td>Office PQR</td>
+				               <td>80000</td>
+				           </tr>
+				           <tr>
+				               <td>Dhananjay Negi</td>
+				               <td>Node Js</td>
+				               <td>Office XYZ</td>
+				               <td>150000</td>
+				           </tr>
 				    </tbody>
-				</table>
+				 </table>
 			</div>
 		</div>
 	</div>
@@ -38,17 +50,19 @@
 
 @push('css-footer')
 @endpush
-lfrtip
+
 @push('js-footer')
 <script>
 	$(document).ready(function(){
-		let table = $("#table_id").DataTable({
-			colReorder: true,
-			serverSide: true,
-			processing: true,
+		let table = $("#tbl-employees").DataTable({
 			pageLength: 10,
-			order: [[ 1, "desc" ]],
 			dom: '<"top"f>rt<"bottom"lip><"clear">',
+			columnDefs: [
+				{
+					targets: '',
+					className: 'text-center'
+				}
+			]
 		});
 	});
 </script>

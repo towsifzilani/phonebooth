@@ -8,6 +8,24 @@
         <title>{{ config('app.name') }} |  @yield('title')</title>
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/project/images/favicon.ico') }}">
 
+        <!-- ---------- -
+        -- Themes section--
+        -- ---------- -->
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/css/vendor.bundle.base.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/css/vendor.bundle.addons.css') }}">
+        <!-- endinject -->
+        <!-- plugin css for this page -->
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css') }}">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="http://www.urbanui.com/" />
+        <!-- ---------- -
+        -- Themes section--
+        -- ---------- -->
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -29,119 +47,54 @@
         <link rel="stylesheet" href="{{ asset('assets/vendors/chocolat/css/chocolat.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/vendors/prism/prism.css') }}">
 
-        <!-- Styles -->
-        {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-
-        <!-- Scripts -->
-        {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
-
-
-        <!-- themes assets -->
-        <!-- Pignose Calender -->
-        <link href="{{ asset('assets/theme/plugins/pg-calendar/css/pignose.calendar.min.css') }}" rel="stylesheet">
-        <!-- Chartist -->
-        <link rel="stylesheet" href="{{ asset('assets/theme/plugins/chartist/css/chartist.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/theme/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css') }}">
-        <!-- Custom Stylesheet -->
-        <link href="{{ asset('assets/theme/css/style.css') }}" rel="stylesheet">
-
-        <script src="{{ asset('assets/theme/plugins/common/common.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/custom.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/settings.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/gleek.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/styleSwitcher.js') }}"></script>
-        <!-- themes assets -->
 
         @stack('css-header')
         @stack('js-header')
     </head>
     <body class="font-sans antialiased">
-        <!--*******************
-            Preloader start
-        ********************-->
-<!--         <div id="preloader">
-            <div class="loader">
-                <svg class="circular" viewBox="25 25 50 50">
-                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-                </svg>
+
+          <div class="container-scroller">
+                <!-- partial:partials/_navbar.html -->
+                @include('included.navbar')
+                <!-- partial -->
+                @include('included.sidebar')
+                <!-- partial:partials/_sidebar.html -->
+              <!-- partial -->
+              <div class="main-panel">
+                @yield('content')
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                  <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="far fa-heart text-danger"></i></span>
+                  </div>
+                </footer>
+                <!-- partial -->
+              </div>
+              <!-- main-panel ends -->
             </div>
-        </div> -->
-        <!--*******************
-            Preloader end
-        ********************-->
-
-        
-        <!--**********************************
-            Main wrapper start
-        ***********************************-->
-        <div id="main-wrapper">
-
-            <!--**********************************
-                Nav header start
-            ***********************************-->
-            <div class="nav-header">
-                <div class="brand-logo">
-                    <a href="{{ url('') }}" class="text-center">
-                        <b class="logo-abbr"><img src="{{ asset('assets/project/images/logo.png') }}" alt=""> </b>
-                        <span class="logo-compact"><img src="{{ asset('assets/project/images/logo.png') }}" alt=""></span>
-                        <span class="brand-title">
-                            <img width="90px" height="90px" src="{{ asset('assets/project/images/logo.png') }}" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <!--**********************************
-                Nav header end
-            ***********************************-->
-
-            <!--**********************************
-                Header start
-            ***********************************-->
-            @include('included.navbar')
-            <!--**********************************
-                Header end ti-comment-alt
-            ***********************************-->
-
-            <!--**********************************
-                Sidebar start
-            ***********************************-->
-            @include('included.sidebar')
-            <!--**********************************
-                Sidebar end
-            ***********************************-->
-
-            <!--**********************************
-                Content body start
-            ***********************************-->
-            <div class="content-body">
-
-                <div class="container-fluid mt-3">
-                    @yield('content')
-                </div>
-                <!-- #/ container -->
-            </div>
-            <!--**********************************
-                Content body end
-            ***********************************-->
-            
-            
-            <!--**********************************
-                Footer start
-            ***********************************-->
-            <div class="footer">
-                <div class="copyright">
-                    <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
-                </div>
-            </div>
-            <!--**********************************
-                Footer end
-            ***********************************-->
-        </div>
-        <!--**********************************
-            Main wrapper end
-        ***********************************-->
+            <!-- page-body-wrapper ends -->
+          </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- plugins:js -->
+        <script src="{{ asset('assets/theme/vendors/js/vendor.bundle.base.js') }}"></script>
+        <script src="{{ asset('assets/theme/vendors/js/vendor.bundle.addons.js') }}"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="{{ asset('assets/theme/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/hoverable-collapse.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/misc.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/settings.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/todolist.js') }}"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="{{ asset('assets/theme/js/dashboard.js') }}"></script>
+        <!-- End custom js for this page-->
+
         <script src="{{ asset('assets/vendors/popper/popper.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/feather-icons/feather.min.js') }}"></script>
@@ -173,29 +126,6 @@
         <!--**********************************
             Scripts
         ***********************************-->
-
-
-        <!-- Chartjs -->
-        <script src="{{ asset('assets/theme/plugins/chart.js/Chart.bundle.min.js') }}"></script>
-        <!-- Circle progress -->
-        <script src="{{ asset('assets/theme/plugins/circle-progress/circle-progress.min.js') }}"></script>
-        <!-- Datamap -->
-        <script src="{{ asset('assets/theme/plugins/d3v3/index.js') }}"></script>
-        <script src="{{ asset('assets/theme/plugins/topojson/topojson.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/plugins/datamaps/datamaps.world.min.js') }}"></script>
-        <!-- Morrisjs -->
-        <script src="{{ asset('assets/theme/plugins/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/plugins/morris/morris.min.js') }}"></script>
-        <!-- Pignose Calender -->
-        <script src="{{ asset('assets/theme/plugins/moment/moment.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/plugins/pg-calendar/js/pignose.calendar.min.js') }}"></script>
-        <!-- ChartistJS -->
-        <script src="{{ asset('assets/theme/plugins/chartist/js/chartist.min.js') }}"></script>
-        <script src="{{ asset('assets/theme/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js') }}"></script>
-
-
-
-        <script src="{{ asset('assets/theme/js/dashboard/dashboard-1.js') }}"></script>
 
 
         @stack('css-footer')
