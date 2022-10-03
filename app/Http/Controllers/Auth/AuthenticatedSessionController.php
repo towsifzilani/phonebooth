@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,6 +29,19 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        $rules = $request->rules();
+        $errorMessages = [
+            'email.required'=>':attribute is required',
+            'password.required'=>':attribute is required'
+        ];
+        $validateRequests = Validator::make($request->all(), $rules,$errorMessages);
+
+        if($validateRequests->fails()) {
+            return redirect('login')->withErrors($validateRequests)->withInput();
+        }
+
+        $validated = $validateRequests->safe();
+
         $request->authenticate();
 
         $request->session()->regenerate();

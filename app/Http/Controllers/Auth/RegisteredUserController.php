@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Validator;
 // use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\Rules\Password;
 
@@ -35,11 +36,26 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $rules = [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Password::min(6)],
-        ]);
+            'password' => ['required', 'confirmed', Password::min(4)],
+            'agree' => ['required']
+        ];
+
+
+        $message = [
+            'email.required'=>'Email is required',
+            'agree.required'=>'Please read & select terms & condition',
+        ];
+
+        $validateData = Validator::make($request->all(),$rules,$message);
+
+        if($validateData->fails()) {
+            return redirect('register')
+                        ->withErrors($validateData)
+                        ->withInput();
+        }
 
         $user = User::create([
             'name' => $request->name,
