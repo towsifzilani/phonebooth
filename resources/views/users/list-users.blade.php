@@ -53,10 +53,16 @@
 
 @push('js-footer')
 <script>
+	let listUsers = '{{ route("get-users-lists") }}';
 	$(document).ready(function(){
 		let table = $("#tbl-employees").DataTable({
 			pageLength: 10,
 			dom: '<"top"f>rt<"bottom"lip><"clear">',
+			ajax: {
+				'url': listUsers,
+				'type': 'POST',
+				
+			},
 			columnDefs: [
 				{
 					targets: '',

@@ -8,24 +8,6 @@
         <title>{{ config('app.name') }} |  @yield('title')</title>
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/project/images/favicon.ico') }}">
 
-        <!-- ---------- -
-        -- Themes section--
-        -- ---------- -->
-        <!-- plugins:css -->
-        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/css/vendor.bundle.base.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/css/vendor.bundle.addons.css') }}">
-        <!-- endinject -->
-        <!-- plugin css for this page -->
-        <!-- End plugin css for this page -->
-        <!-- inject:css -->
-        <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css') }}">
-        <!-- endinject -->
-        <link rel="shortcut icon" href="http://www.urbanui.com/" />
-        <!-- ---------- -
-        -- Themes section--
-        -- ---------- -->
-
         <!-- Fonts -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -48,10 +30,29 @@
         <link rel="stylesheet" href="{{ asset('assets/vendors/prism/prism.css') }}">
 
 
+        <!-- ---------- -
+        -- Themes section--
+        -- ---------- -->
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/css/vendor.bundle.base.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/theme/vendors/css/vendor.bundle.addons.css') }}">
+        <!-- endinject -->
+        <!-- plugin css for this page -->
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css') }}">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="http://www.urbanui.com/" />
+        <!-- ---------- -
+        -- Themes section--
+        -- ---------- -->
+
+
         @stack('css-header')
         @stack('js-header')
     </head>
-    <body class="font-sans antialiased">
+    <body class="sidebar-fixed">
 
           <div class="container-scroller">
                 <!-- partial:partials/_navbar.html -->
@@ -61,7 +62,9 @@
                 <!-- partial:partials/_sidebar.html -->
               <!-- partial -->
               <div class="main-panel">
-                @yield('content')
+                <div class="content-wrapper">
+                  @yield('content')
+                </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
@@ -78,22 +81,7 @@
           </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- plugins:js -->
-        <script src="{{ asset('assets/theme/vendors/js/vendor.bundle.base.js') }}"></script>
-        <script src="{{ asset('assets/theme/vendors/js/vendor.bundle.addons.js') }}"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page-->
-        <!-- End plugin js for this page-->
-        <!-- inject:js -->
-        <script src="{{ asset('assets/theme/js/off-canvas.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/hoverable-collapse.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/misc.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/settings.js') }}"></script>
-        <script src="{{ asset('assets/theme/js/todolist.js') }}"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page-->
-        <script src="{{ asset('assets/theme/js/dashboard.js') }}"></script>
-        <!-- End custom js for this page-->
+
 
         <script src="{{ asset('assets/vendors/popper/popper.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -121,6 +109,23 @@
 
         <script src="{{ asset('assets/vendors/chocolat/js/jquery.chocolat.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/prism/prism.js') }}"></script>
+
+        <!-- plugins:js -->
+        <script src="{{ asset('assets/theme/vendors/js/vendor.bundle.base.js') }}"></script>
+        <script src="{{ asset('assets/theme/vendors/js/vendor.bundle.addons.js') }}"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="{{ asset('assets/theme/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/hoverable-collapse.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/misc.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/settings.js') }}"></script>
+        <script src="{{ asset('assets/theme/js/todolist.js') }}"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="{{ asset('assets/theme/js/dashboard.js') }}"></script>
+        <!-- End custom js for this page-->
 
 
         <!--**********************************

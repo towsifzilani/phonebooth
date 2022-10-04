@@ -19,7 +19,9 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 
-Route::get('/dashboard',[Dashboard::class,'index'])->middleware(['auth'])->name('dashboard');
-Route::get('users/list',[Users::class,'index'])->middleware(['auth'])->name('users-lists');
+Route::get('dashboard',[Dashboard::class,'index'])->middleware(['auth'])->name('dashboard');
+Route::get('settings',[Users::class,'index'])->middleware(['auth'])->name('settings');
+Route::get('users',[Users::class,'index'])->middleware(['auth'])->name('list-users');
+Route::get('users/lists',[Users::class,'users_lists'])->middleware(['auth'])->name('get-users-lists');
 
 require __DIR__.'/auth.php';

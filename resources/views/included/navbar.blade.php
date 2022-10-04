@@ -187,7 +187,7 @@
   </div>
 </nav>
 <!-- partial -->
-<div class="container-fluid page-body-wrapper">
+<div class="container-fluid page-body-wrapper px-0">
   <!-- partial:partials/_settings-panel.html -->
   <div class="theme-setting-wrapper">
     <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
